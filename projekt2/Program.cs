@@ -27,7 +27,12 @@ Console.WriteLine("critical hit");
 }
 static int HpBar(int dmg,int hp)
 {
-   for(int i=hp)
+   
+Console.Write("hp: [");
+for(int i=100; i>0; i--){§
+
+Console.WriteLine($"]{hp}/100");
+   }
 
 
    return hp;
