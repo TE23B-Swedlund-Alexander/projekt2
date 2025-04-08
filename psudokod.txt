@@ -1,0 +1,18 @@
+make fighting game thrugh choosing attacks
+
+1. make two guys (class?)
+
+2. make guys have hp stat snd name (more hp less attack and viseverse) (function)
+
+3. make attack
+
+4. make attacks deal damage to other guys chance to miss chance to crit 1/5 chance on both
+
+5. make hp bars that decrease (function)
+
+6. player can bet on guy
+
+7. make win/loss screen wth retry availelebelbe
+
+8. more?
+
