@@ -5,6 +5,18 @@ int guy1Hp = 100;
 int guy2Hp = 100;
 int guy1Dmg;
 int guy2Dmg;
+int nP1 = rnd.Next(0,5); //picks what parts are part of the name
+int nP2 = rnd.Next(0,5);
+int lNP1 = rnd.Next(0,5);
+int lNP2 = rnd.Next(0,5);
+
+List <string> namePart1 = ["Dec","Jo","Al","Lu","Juli"];
+List <string> namePart2 = ["lan","el","ec","ca","anne"];
+List <string> lastNamePart1 = ["Yod","Single","Farr","Sto","Pe"];
+List <string> lastNamePart2 = ["er","ton","ell","kes","rry"];
+
+string nameGuy1 = namePart1[nP1] + namePart2[nP2] + " " + lastNamePart1[lNP1] + lastNamePart2[lNP2];
+Console.WriteLine(nameGuy1);
 
 static int DmgCalculation(int hp)
 {
@@ -44,7 +56,7 @@ Console.WriteLine($"]{hp}/100");
 
    return hp;
 }
-HpBar(guy1Hp);
+
 
 
 
