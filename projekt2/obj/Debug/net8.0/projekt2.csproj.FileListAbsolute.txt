@@ -1,0 +1,15 @@
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\bin\Debug\net8.0\projekt2.exe
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\bin\Debug\net8.0\projekt2.deps.json
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\bin\Debug\net8.0\projekt2.runtimeconfig.json
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\bin\Debug\net8.0\projekt2.dll
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\bin\Debug\net8.0\projekt2.pdb
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.AssemblyInfoInputs.cache
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.AssemblyInfo.cs
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.csproj.CoreCompileInputs.cache
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.sourcelink.json
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.dll
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\refint\projekt2.dll
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.pdb
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\projekt2.genruntimeconfig.cache
+C:\Users\alexander.swedlund\New folder\projekt2\projekt2\obj\Debug\net8.0\ref\projekt2.dll

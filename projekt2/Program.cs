@@ -3,8 +3,10 @@
 
 int guy1Hp = 100;
 int guy2Hp = 100;
+int guy1Dmg;
+int guy2Dmg;
 
-static int DmgCalculation()
+static int DmgCalculation(int hp)
 {
     Random rnd = new Random();
     
@@ -25,15 +27,25 @@ Console.WriteLine("critical hit");
     
     return dmg;
 }
-static int HpBar(int dmg,int hp)
+static int HpBar(int hp)
 {
    
 Console.Write("hp: [");
-for(int i=100; i>0; i--){§
+for(int i=hp; i>0; i--){
+Console.Write("|");
 
-Console.WriteLine($"]{hp}/100");
+   }
+   for(int i=100-hp; i>0; i--){
+Console.Write(" ");
+
    }
 
+Console.WriteLine($"]{hp}/100");
 
    return hp;
 }
+HpBar(guy1Hp);
+
+
+
+Console.ReadLine();
