@@ -18,6 +18,15 @@ List <string> lastNamePart2 = ["er","ton","ell","kes","rry"];
 string nameGuy1 = namePart1[nP1] + namePart2[nP2] + " " + lastNamePart1[lNP1] + lastNamePart2[lNP2];
 Console.WriteLine(nameGuy1);
 
+nP1 = rnd.Next(0,5); //picks what parts are part of the name
+nP2 = rnd.Next(0,5);
+lNP1 = rnd.Next(0,5);
+lNP2 = rnd.Next(0,5);
+string nameGuy2 = namePart1[nP1] + namePart2[nP2] + " " + lastNamePart1[lNP1] + lastNamePart2[lNP2];
+Console.WriteLine(nameGuy2);
+
+
+
 static int DmgCalculation(int hp)
 {
     Random rnd = new Random();
