@@ -1,72 +1,87 @@
 ﻿Random rnd = new Random();
 
-
 int guy1Hp = 100;
 int guy2Hp = 100;
 int guy1Dmg;
 int guy2Dmg;
-int nP1 = rnd.Next(0,5); //picks what parts are part of the name
-int nP2 = rnd.Next(0,5);
-int lNP1 = rnd.Next(0,5);
-int lNP2 = rnd.Next(0,5);
+int nP1 = rnd.Next(0, 5); //picks what parts are part of the name
+int nP2 = rnd.Next(0, 5);
+int lNP1 = rnd.Next(0, 5);
+int lNP2 = rnd.Next(0, 5);
 
-List <string> namePart1 = ["Dec","Jo","Al","Lu","Juli"];
-List <string> namePart2 = ["lan","el","ec","ca","anne"];
-List <string> lastNamePart1 = ["Yod","Single","Farr","Sto","Pe"];
-List <string> lastNamePart2 = ["er","ton","ell","kes","rry"];
+List<string> namePart1 = ["Dec", "Jo", "Al", "Lu", "Juli"];
+List<string> namePart2 = ["lan", "el", "ec", "ca", "anne"];
+List<string> lastNamePart1 = ["Yod", "Single", "Farr", "Sto", "Pe"];
+List<string> lastNamePart2 = ["er", "ton", "ell", "kes", "rry"];
 
 string nameGuy1 = namePart1[nP1] + namePart2[nP2] + " " + lastNamePart1[lNP1] + lastNamePart2[lNP2];
-Console.WriteLine(nameGuy1);
 
-nP1 = rnd.Next(0,5); //picks what parts are part of the name
-nP2 = rnd.Next(0,5);
-lNP1 = rnd.Next(0,5);
-lNP2 = rnd.Next(0,5);
+
+nP1 = rnd.Next(0, 5); //picks what parts are part of the name
+nP2 = rnd.Next(0, 5);
+lNP1 = rnd.Next(0, 5);
+lNP2 = rnd.Next(0, 5);
 string nameGuy2 = namePart1[nP1] + namePart2[nP2] + " " + lastNamePart1[lNP1] + lastNamePart2[lNP2];
-Console.WriteLine(nameGuy2);
+
 
 
 
 static int DmgCalculation(int hp)
 {
     Random rnd = new Random();
-    
+
     int dmg = 7;
-    int dmgbonus = rnd.Next(1, 5); //funkar det så funkar det
+    int dmgbonus = rnd.Next(1, 6); //funkar det så funkar det
     dmg = dmg + dmgbonus;
-    int accurecy = rnd.Next(1, 5);
-    if (accurecy == 1)
+    int accurecy = rnd.Next(1, 21);
+    if (accurecy >0 && accurecy<4)
     {
         dmg = 0;
         Console.WriteLine("miss");
     }
-    if (accurecy == 5)
+    if (accurecy == 20 || accurecy==19)
     {
-        dmg *=2 ;
-Console.WriteLine("critical hit");
+        dmg *= 2;
+        Console.WriteLine("critical hit");
     }
-    
-    return dmg;
+    Console.WriteLine($"{dmg} damage");
+    hp -= dmg;
+    return hp;
 }
-static int HpBar(int hp)
+static int HpBar(int hp, string name)
 {
-   
-Console.Write("hp: [");
-for(int i=hp; i>0; i--){
-Console.Write("|");
 
-   }
-   for(int i=100-hp; i>0; i--){
-Console.Write(" ");
+    Console.Write($"{name} hp: [");
+    for (int i = hp; i > 0; i--)
+    {
+        Console.Write("|");
 
-   }
+    }
+    for (int i = 100 - hp; i > 0; i--)
+    {
+        Console.Write(" ");
 
-Console.WriteLine($"]{hp}/100");
+    }
 
-   return hp;
+    Console.WriteLine($"]{hp}/100");
+
+    return hp;
 }
 
 
+while (guy1Hp > 0 && guy2Hp > 0){
+    
+    Console.WriteLine($"{nameGuy1} attacks {nameGuy2}");
+guy2Hp = DmgCalculation(guy2Hp);
+HpBar(guy2Hp, nameGuy2);
 
+Console.ReadLine();
+
+Console.WriteLine($"{nameGuy2} attacks {nameGuy1}");
+guy1Hp = DmgCalculation(guy1Hp);
+HpBar(guy1Hp, nameGuy1);
+
+Console.ReadLine();
+}
 
 Console.ReadLine();
