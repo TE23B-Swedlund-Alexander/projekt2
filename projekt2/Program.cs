@@ -31,26 +31,15 @@ static int BaseDmgCalculation()
     int dmg = 7;
     int dmgbonus = rnd.Next(1, 6); //makes the damage vary from hit to hit
     dmg = dmg + dmgbonus;
-    int accurecy = rnd.Next(1, 21); //crit, miss or hit
 
-    if (accurecy > 0 && accurecy < 4) //miss
-    {
-        dmg = 0;
-        Console.WriteLine("miss");
-    }
-
-    if (accurecy == 20 || accurecy == 19)//crit
-    {
-        dmg *= 2;
-        Console.WriteLine("critical hit");
-    }
 
     return dmg;
 }
 static void HpBar(int hp, string name) // makes a hp bar
 {
 
-    Console.Write($"{name} hp: ["); //first bit
+    Console.WriteLine($"{name} hp: ");
+    Console.Write("["); //first bit
 
     for (int i = hp; i > 0; i--) //amount of hp remaining
     {
@@ -74,6 +63,7 @@ static int AttackOutcome(string name)
     int attackEnemy = rnd.Next(1, 3);
     string attackEnemyString = "aaa";
     int attackOutcome = 1;
+    string playerChoice="hit";
     bool attackChosen = false;
     if (attackEnemy == 1) attackEnemyString = "punches";
     if (attackEnemy == 2) attackEnemyString = "kicks";
@@ -82,19 +72,22 @@ static int AttackOutcome(string name)
     {
         Console.WriteLine("what attack do you want to use");
         Console.WriteLine("kick faint or punch");
-        string playerChoice = Console.ReadLine();
+        playerChoice = Console.ReadLine();
         playerChoice = playerChoice.ToLower();
         if (playerChoice == "punch")
         {
             attackPlayer = 1;
+            attackChosen=true;
         }
         else if (playerChoice == "kick")
         {
             attackPlayer = 2;
+            attackChosen=true;
         }
         else if (playerChoice == "faint")
         {
             attackPlayer = 3;
+            attackChosen=true;
         }
         else Console.WriteLine("choose one of the attacks");
     }
@@ -119,7 +112,7 @@ static int AttackOutcome(string name)
 
         attackOutcome = 1;
     }
-    Console.WriteLine($"you {attackPlayer} {name}, {name} {attackEnemyString} you");
+    Console.WriteLine($"you {playerChoice} {name}, {name} {attackEnemyString} you");
 
     return attackOutcome;
 }
@@ -143,7 +136,7 @@ while (guy1Hp > 0 && guy2Hp > 0) //runs fight
         guy2Dmg *= 2;
     }
 guy1Hp-=guy2Dmg;
-guy2Hp-=guy2Dmg;
+guy2Hp-=guy1Dmg;
 
     Console.ReadLine();
 
